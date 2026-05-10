@@ -25,10 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // Database connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
+mongoose.connect(process.env.MONGO_URI).then(() => {
   console.log('MongoDB Connected');
   if (process.env.NODE_ENV !== 'production') {
     const PORT = process.env.PORT || 5000;
